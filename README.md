@@ -2,11 +2,11 @@
 
 Welcome to my personal portfolio website project.
 
-This repository documents my journey of becoming a Software Developer and AI Engineer by building a professional portfolio website from scratch.
+This repository documents my journey of becoming a **Software Developer** and **AI Engineer** by building a professional portfolio website from scratch.
 
 ---
 
-## 👨‍💻 About Me
+# 👨‍💻 About Me
 
 Hi, I'm **Sayed Shaheen Alam**.
 
@@ -15,11 +15,11 @@ Hi, I'm **Sayed Shaheen Alam**.
 - 🤖 Future AI Engineer
 - 🎓 Founder of Sayed Academy
 
-I am passionate about software development, artificial intelligence, business automation, and continuous learning.
+I am passionate about software development, Artificial Intelligence, business automation, and continuous learning.
 
 ---
 
-## 🎯 Project Goal
+# 🎯 Project Goal
 
 The goal of this project is to build a modern, responsive, and professional portfolio website using:
 
@@ -29,7 +29,7 @@ The goal of this project is to build a modern, responsive, and professional port
 - Git
 - GitHub
 
-Later this project will be upgraded with:
+Later, this project will be upgraded with:
 
 - Python
 - FastAPI
@@ -39,7 +39,7 @@ Later this project will be upgraded with:
 
 ---
 
-## 🚀 Technologies
+# 🚀 Technologies Used
 
 - HTML5
 - CSS3
@@ -49,9 +49,9 @@ Later this project will be upgraded with:
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```
+```text
 portfolio-website/
 │
 ├── index.html
@@ -63,7 +63,7 @@ portfolio-website/
 
 ---
 
-## 📅 Development Roadmap
+# 📅 Development Roadmap
 
 - [x] Project Setup
 - [x] Header
@@ -83,48 +83,47 @@ portfolio-website/
 
 ---
 
-## 📸 Screenshot
+# 📸 Screenshot
 
-Coming Soon...
-
----
-
-## 📈 Current Status
-
-🚧 Project Under Development
+> Coming Soon...
 
 ---
 
-## 🌍 Future Features
+# 📈 Current Status
 
-- Personal Portfolio
-- Project Showcase
-- AI Chat Assistant
-- ERP Software Demo
-- Sayed Academy
-- Blog
-- Contact Form
-- Resume Download
+🚧 **Project Under Development**
 
 ---
 
-## 🤝 Connect With Me
+# 🌍 Future Features
 
-GitHub:
-https://github.com/syedshahinalamneel-boop
-
----
-
-## ⭐ If you like this project
-
-Please give this repository a ⭐ Star.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+- 🌐 Personal Portfolio
+- 📁 Project Showcase
+- 🤖 AI Chat Assistant
+- 💼 ERP Software Demo
+- 🎓 Sayed Academy
+- 📝 Blog
+- 📬 Contact Form
+- 📄 Resume Download
 
 ---
 
-Made with ❤️ by **Sayed Shaheen Alam**
+# 🤝 Connect With Me
+
+- **GitHub:** https://github.com/syedshahinalamneel-boop
+
+---
+
+# ⭐ Support
+
+If you like this project, please consider giving it a ⭐ Star.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## Made with ❤️ by **Sayed Shaheen Alam**
