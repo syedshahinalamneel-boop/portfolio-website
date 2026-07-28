@@ -1,4 +1,4 @@
-# 🌐 Syed Shaheen Alam - Personal Portfolio Website
+# 🌐 Sayed Shaheen Alam - Personal Portfolio Website
 
 Welcome to my personal portfolio website project.
 
