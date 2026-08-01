@@ -667,6 +667,68 @@ nav a.nav-cta:hover { border-color: var(--mint); color: var(--mint); }
 }
 
 /* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    padding:100px 0;
+
+}
+
+.stat-card{
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.05);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stat-card h2{
+
+    font-size:48px;
+
+    color:#0b57d0;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    color:var(--text-light);
+
+}
+
+.stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* =========================================================
    CONTACT / FOOTER
 ========================================================= */
 .contact {
@@ -823,4 +885,102 @@ footer {
   .hero-copy h1 { font-size: 30px; }
   .about-badge { width: 120px; height: 120px; }
   .log-list li { grid-template-columns: 40px 1fr; }
+}
+
+@media(max-width:600px){
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    padding:100px 0;
+
+}
+
+.stats h2{
+
+    font-size:36px;
+
+    margin-bottom:15px;
+
+}
+
+.stats-sub{
+
+    max-width:700px;
+
+    color:var(--text-light);
+
+    margin-bottom:50px;
+
+    line-height:1.8;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.stat-card{
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    box-shadow:0 16px 34px rgba(16,25,43,.06);
+
+    transition:.3s ease;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 22px 45px rgba(16,25,43,.12);
+
+}
+
+.stat-card h3{
+
+    font-size:52px;
+
+    color:var(--ink);
+
+    margin-bottom:12px;
+
+    font-weight:800;
+
+}
+
+.stat-card p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    line-height:1.6;
+
 }
