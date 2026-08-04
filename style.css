@@ -34,6 +34,73 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* =========================================================
+   DARK MODE — HEADER
+========================================================= */
+
+body.dark-mode header {
+    background: #0b1628;
+
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .logo {
+    color: #ffffff;
+}
+
+body.dark-mode .brand-tag {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+body.dark-mode nav a {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+body.dark-mode nav a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode nav a.nav-cta {
+    color: #ffffff;
+
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+body.dark-mode nav a.nav-cta:hover {
+    color: var(--mint);
+
+    border-color: var(--mint);
+
+    background: rgba(35, 181, 138, 0.08);
+}
+
+body.dark-mode .theme-toggle {
+    color: #ffffff;
+
+    border-color: rgba(255, 255, 255, 0.20);
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================================
+   DARK MODE VARIABLES
+========================================================= */
+
+body.dark-mode {
+
+  --ink:        #f5f7fa;
+  --ink-soft:  #e2e8f0;
+
+  --paper:      #0b1220;
+  --paper-deep: #111827;
+
+  --text-dark:  #f5f7fa;
+  --text-light: #aeb9c9;
+
+  --line:       #263244;
+
+}
+
 h1, h2, h3 {
   font-family: var(--font-display);
   color: var(--text-dark);
@@ -54,130 +121,252 @@ code, pre { font-family: var(--font-mono); }
 /* =========================================================
    HEADER / NAV
 ========================================================= */
-header{
 
-    position:sticky;
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    z-index:1000;
+    padding: 14px 6%;
 
-    display:flex;
+    background: var(--ink);
+    color: #ffffff;
 
-    align-items:center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 
-    justify-content:space-between;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
-    padding:22px 8%;
-
-    background:rgba(16,25,43,.95);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.logo{
 
-    font-size:28px;
+/* =========================
+   BRAND
+========================= */
 
-    font-weight:800;
-
-    letter-spacing:-0.8px;
-
-    text-decoration:none;
-
-    color:var(--paper);
-
-    transition:.3s ease;
-
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
-.logo span{
+.logo {
+    font-family: var(--font-display);
 
-    color:var(--mint);
+    font-size: 27px;
+    font-weight: 700;
 
+    letter-spacing: -0.7px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    transition: opacity 0.25s ease;
 }
 
-.logo:hover{
-
-    opacity:.85;
-
+.logo span {
+    color: var(--mint);
 }
 
-.brand{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
+.logo:hover {
+    opacity: 0.85;
 }
 
-.brand-tag{
 
-    margin-top:4px;
+/* =========================
+   BRAND TAG
+========================= */
 
-    font-size:12px;
+.brand-tag {
+    margin: 0;
 
-    font-weight:400;
+    font-family: var(--font-mono);
 
-    letter-spacing:.5px;
+    font-size: 10px;
+    letter-spacing: 0.3px;
 
-    line-height:1.4;
-
-    color:rgba(255,255,255,.75);
-
+    color: rgba(255, 255, 255, 0.68);
 }
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
-  display: flex;
-  align-items: center;
-  gap: 34px;
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
 }
 
 nav a {
-  color: var(--paper);
-  opacity: 0.78;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+    color: rgba(255, 255, 255, 0.78);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
-nav a:hover { opacity: 1; }
+
+nav a:hover {
+    color: #ffffff;
+}
+
+nav a:not(.nav-cta) {
+    position: relative;
+}
+
+nav a:not(.nav-cta)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--mint);
+
+    transition: width 0.2s ease;
+}
+
+nav a:not(.nav-cta):hover::after {
+    width: 100%;
+}
+
+/* =========================
+   CONTACT BUTTON
+========================= */
 
 nav a.nav-cta {
-  opacity: 1;
-  padding: 9px 18px;
-  border: 1px solid var(--line-dark);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 13px;
+    opacity: 1;
+
+    padding: 9px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: 999px;
+
+    font-family: var(--font-mono);
+    font-size: 12px;
+
+    color: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
 }
-nav a.nav-cta:hover { border-color: var(--mint); color: var(--mint); }
+
+nav a.nav-cta:hover {
+    border-color: var(--mint);
+
+    color: var(--mint);
+
+    background: rgba(35, 181, 138, 0.08);
+}
+
+
+/* =========================
+   DARK / LIGHT TOGGLE
+========================= */
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    
+    margin-left: 8px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: var(--mint);
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
 
 .nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 34px;
-  height: 34px;
-  background: none;
-  border: none;
-  cursor: pointer;
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 34px;
+    height: 34px;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
 }
+
 .nav-toggle span {
-  width: 100%;
-  height: 2px;
-  background: var(--paper);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+    width: 100%;
+    height: 2px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
 }
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
 
 /* =========================================================
    HERO
@@ -1243,6 +1432,71 @@ grid-template-columns:1fr;
 }
 
 /* =========================================================
+   DARK MODE TOGGLE
+========================================================= */
+
+.theme-toggle{
+
+    width:42px;
+    height:42px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    color:var(--paper);
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s ease;
+
+}
+
+.theme-toggle:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--mint);
+
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark-mode{
+
+    --paper:#0b1220;
+
+    --paper-deep:#111827;
+
+    --ink:#f5f7fa;
+
+    --ink-soft:#e2e8f0;
+
+    --text-dark:#f5f7fa;
+
+    --text-light:#aeb9c9;
+
+    --line:#263244;
+
+    background:var(--paper);
+
+    color:var(--text-dark);
+
+}
+
+/* =========================================================
    STATS
 ========================================================= */
 
@@ -1327,5 +1581,1059 @@ grid-template-columns:1fr;
     font-size:15px;
 
     line-height:1.6;
+
+}
+
+/* =========================================================
+   DARK MODE — HERO TEXT
+========================================================= */
+
+body.dark-mode .hero-sub {
+    color: #b8c4d6;
+}
+
+body.dark-mode .hero-copy p {
+    color: #b8c4d6;
+}
+
+
+/* Hero technology tags */
+
+body.dark-mode .tech-stack span {
+    background: #e8f0fa;
+    color: #0b1220;
+}
+
+
+/* Hero primary button */
+
+body.dark-mode .btn-primary {
+    background: #f3f5f7;
+    color: #10192b;
+}
+
+body.dark-mode .btn-primary:hover {
+    background: #ffffff;
+}
+
+
+/* Hero secondary button */
+
+body.dark-mode .btn-ghost {
+    color: #f3f5f7;
+    border-color: #334155;
+}
+
+body.dark-mode .btn-ghost:hover {
+    border-color: var(--mint);
+    color: var(--mint);
+}
+
+/* =========================================================
+   DARK MODE — FIELD & BUILD STATUS CARDS
+========================================================= */
+
+/* FIELD CARD */
+
+body.dark-mode .ledger-card.field {
+    background: #111c2d;
+    border-color: #26364d;
+    color: #f3f5f7;
+}
+
+body.dark-mode .ledger-card.field .ledger-label {
+    color: var(--amber);
+}
+
+body.dark-mode .ledger-card.field dl div {
+    border-top-color: #34445a;
+}
+
+body.dark-mode .ledger-card.field dt {
+    color: #9fb0c5;
+}
+
+body.dark-mode .ledger-card.field dd {
+    color: #f3f5f7;
+}
+
+
+/* BUILD STATUS / LAB CARD */
+
+body.dark-mode .ledger-card.lab {
+    background: #111c2d;
+    border-color: #26364d;
+}
+
+body.dark-mode .ledger-card.lab .ledger-label {
+    color: var(--mint);
+}
+
+body.dark-mode .ledger-card.lab pre {
+    color: #c4d0df;
+}
+
+body.dark-mode .ledger-card.lab .ok {
+    color: var(--mint);
+}
+
+body.dark-mode .ledger-card.lab .pending {
+    color: var(--amber);
+}
+
+/* =========================================================
+   DARK MODE — SKILLS & TECHNOLOGIES
+========================================================= */
+
+body.dark-mode .skills h2 {
+    color: #f5f7fa;
+}
+
+body.dark-mode .skills-sub {
+    color: #b8c4d6;
+}
+
+
+/* Skill Cards */
+
+body.dark-mode .skill-card {
+    background: #111c2d;
+    border-color: #26364d;
+    color: #f5f7fa;
+}
+
+
+/* Card Heading */
+
+body.dark-mode .skill-card h3 {
+    color: #f5f7fa;
+}
+
+
+/* Technology List */
+
+body.dark-mode .skill-card ul li {
+    color: #c4d0df;
+}
+
+
+/* Divider */
+
+body.dark-mode .skill-card ul li + li {
+    border-top-color: #34445a;
+}
+
+/* =========================================================
+   DARK MODE — FEATURED PROJECT
+========================================================= */
+
+body.dark-mode .work-card {
+    background: #111c2d;
+    border-color: #26364d;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Project status */
+
+body.dark-mode .work-kicker {
+    color: #23b58a;
+}
+
+/* Project title */
+
+body.dark-mode .work-card h3 {
+    color: #f5f7fa;
+}
+
+/* Active development badge */
+
+body.dark-mode .work-status {
+    background: rgba(35, 181, 138, 0.15);
+    color: #4adeb0;
+    border: 1px solid rgba(35, 181, 138, 0.25);
+}
+
+/* Project description */
+
+body.dark-mode .work-desc {
+    color: #b8c4d6;
+}
+
+/* Technology tags */
+
+body.dark-mode .work-tags span {
+    background: #1b293d;
+    color: #d7e0ec;
+    border: 1px solid #314158;
+}
+
+/* Hover effect */
+
+body.dark-mode .work-tags span:hover {
+    border-color: var(--mint);
+    color: var(--mint);
+}
+
+/* =========================================================
+   DARK MODE — PROFESSIONAL EXPERIENCE
+========================================================= */
+
+body.dark-mode .experience-card {
+    background: #111c2d;
+    border-color: #26364d;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Section subtitle */
+
+body.dark-mode .experience-sub {
+    color: #b8c4d6;
+}
+
+
+/* Present badge */
+
+body.dark-mode .experience-year {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+}
+
+
+/* Job title */
+
+body.dark-mode .experience-card h3 {
+    color: #f5f7fa;
+}
+
+
+/* Company */
+
+body.dark-mode .experience-card h4 {
+    color: #9fb0c5;
+}
+
+
+/* Description */
+
+body.dark-mode .experience-card p {
+    color: #b8c4d6;
+}
+
+/* =========================================================
+   DARK MODE — STATS
+========================================================= */
+
+body.dark-mode .stat-card {
+    background: #111c2d;
+    border-color: #26364d;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* Numbers */
+
+body.dark-mode .stat-card h2 {
+    color: #60a5fa;
+}
+
+/* Labels */
+
+body.dark-mode .stat-card p {
+    color: #b8c4d6;
+}
+
+/* Subtle hover */
+
+body.dark-mode .stat-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-4px);
+}
+
+/* =========================================================
+   DARK MODE — CERTIFICATIONS
+========================================================= */
+
+body.dark-mode .certifications h2 {
+    color: #f5f7fa;
+}
+
+body.dark-mode .cert-sub {
+    color: #b8c4d6;
+}
+
+
+/* Certificate Cards */
+
+body.dark-mode .cert-card {
+    background: #111c2d;
+    border-color: #26364d;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Certificate Titles */
+
+body.dark-mode .cert-card h3 {
+    color: #f5f7fa;
+}
+
+
+/* Certificate Description */
+
+body.dark-mode .cert-card p {
+    color: #b8c4d6;
+}
+
+
+/* Status Badge */
+
+body.dark-mode .cert-card span {
+    background: rgba(35, 181, 138, 0.15);
+    color: #4adeb0;
+    border: 1px solid rgba(35, 181, 138, 0.25);
+}
+
+/* =========================================================
+   DARK MODE — CONTACT
+========================================================= */
+
+body.dark-mode .contact h2 {
+    color: #f5f7fa;
+}
+
+body.dark-mode .contact-sub {
+    color: #b8c4d6;
+}
+
+
+/* Contact Cards */
+
+body.dark-mode .contact-card {
+    background: #111c2d;
+    border-color: #26364d;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Card Heading */
+
+body.dark-mode .contact-card h3 {
+    color: #f5f7fa;
+}
+
+
+/* Card Text */
+
+body.dark-mode .contact-card p {
+    color: #b8c4d6;
+}
+
+
+/* GitHub Link */
+
+body.dark-mode .contact-card a {
+    color: #60a5fa;
+}
+
+body.dark-mode .contact-card a:hover {
+    color: #4adeb0;
+}
+
+
+/* Contact Buttons */
+
+body.dark-mode .contact-buttons .btn-primary {
+    background: #f3f5f7;
+    color: #10192b;
+}
+
+body.dark-mode .contact-buttons .btn-primary:hover {
+    background: #ffffff;
+}
+
+body.dark-mode .contact-buttons .btn-ghost {
+    color: #f3f5f7;
+    border-color: #334155;
+}
+
+body.dark-mode .contact-buttons .btn-ghost:hover {
+    border-color: #4adeb0;
+    color: #4adeb0;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 70px 8% 25px;
+    border-top: 1px solid var(--line-dark);
+}
+
+.footer-container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 0.8fr;
+    gap: 70px;
+}
+
+
+/* ===================== FOOTER BRAND ===================== */
+
+.footer-brand h2 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--paper);
+}
+
+.footer-brand h2 span {
+    color: var(--mint);
+}
+
+.footer-title {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--mint);
+    margin-bottom: 18px;
+}
+
+.footer-description {
+    max-width: 430px;
+    color: #aebbd0;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+/* ===================== FOOTER LINKS ===================== */
+
+.footer-menu,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-menu h3,
+.footer-contact h3 {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--mint);
+    margin-bottom: 10px;
+}
+
+.footer-menu a,
+.footer-contact a {
+    color: #b8c4d6;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.footer-menu a:hover,
+.footer-contact a:hover {
+    color: var(--mint);
+    transform: translateX(3px);
+}
+
+
+/* ===================== FOOTER BOTTOM ===================== */
+
+.footer-bottom {
+    max-width: var(--max-w);
+    margin: 55px auto 0;
+    padding-top: 22px;
+
+    border-top: 1px solid var(--line-dark);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #7f8da3;
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+/* =========================================================
+   FINAL DARK MODE — FOOTER FIX
+========================================================= */
+
+body.dark-mode .footer {
+    background: #0b1525 !important;
+    color: #f3f5f7 !important;
+    border-top: 1px solid #26364d !important;
+}
+
+body.dark-mode .footer-container {
+    background: transparent !important;
+}
+
+
+/* Footer Brand */
+
+body.dark-mode .footer-brand h2 {
+    color: #f3f5f7 !important;
+}
+
+body.dark-mode .footer-brand h2 span {
+    color: #23b58a !important;
+}
+
+body.dark-mode .footer-title {
+    color: #23b58a !important;
+}
+
+body.dark-mode .footer-description {
+    color: #b8c4d6 !important;
+}
+
+
+/* Navigation + Connect */
+
+body.dark-mode .footer-menu h3,
+body.dark-mode .footer-contact h3 {
+    color: #23b58a !important;
+}
+
+body.dark-mode .footer-menu a,
+body.dark-mode .footer-contact a {
+    color: #b8c4d6 !important;
+}
+
+body.dark-mode .footer-menu a:hover,
+body.dark-mode .footer-contact a:hover {
+    color: #23b58a !important;
+}
+
+
+/* Footer Bottom */
+
+body.dark-mode .footer-bottom {
+    background: transparent !important;
+    border-top: 1px solid #26364d !important;
+}
+
+body.dark-mode .footer-bottom p {
+    color: #7f8da3 !important;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE — HEADER
+========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 14px 5%;
+        min-height: 68px;
+    }
+
+    /* =========================
+       BRAND
+    ========================= */
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .brand-tag {
+        font-size: 9px;
+        letter-spacing: 0.2px;
+    }
+
+
+    /* =========================
+       MOBILE CONTROLS
+    ========================= */
+
+    .nav-toggle {
+        display: flex;
+        margin-left: auto;
+        margin-right: 8px;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+
+        margin-left: 0;
+
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       MOBILE NAVIGATION
+    ========================= */
+
+    nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 5% 18px;
+
+        background: var(--ink);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    /* Open menu */
+
+    nav.active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    /* Navigation links */
+
+    nav a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 4px;
+
+        font-size: 14px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+
+    /* Remove desktop underline animation */
+
+    nav a:not(.nav-cta)::after {
+        display: none;
+    }
+
+
+    /* Contact button */
+
+    nav a.nav-cta {
+        margin-top: 12px;
+
+        padding: 10px 16px;
+
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   MOBILE MENU — FINAL COLOR FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    nav#navMenu {
+        background: #10192b !important;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.20);
+    }
+
+    nav#navMenu a {
+        color: #ffffff !important;
+
+        opacity: 0.88;
+
+        background: transparent;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    nav#navMenu a:hover {
+        color: #23b58a !important;
+        opacity: 1;
+    }
+
+    nav#navMenu a.nav-cta {
+        color: #ffffff !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.20);
+
+        background: transparent;
+    }
+
+    nav#navMenu a.nav-cta:hover {
+        color: #23b58a !important;
+        border-color: #23b58a;
+        background: rgba(35, 181, 138, 0.08);
+    }
+
+}
+
+/* =========================================================
+   MOBILE HERO — FINAL RESPONSIVE POLISH
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+        width: 100%;
+        padding: 52px 6% 45px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+    }
+
+
+    /* =========================
+       HERO COPY
+    ========================= */
+
+    .hero-copy {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* =========================
+       EYEBROW
+    ========================= */
+
+    .eyebrow {
+        font-size: 10px;
+        line-height: 1.6;
+
+        letter-spacing: 1.3px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* =========================
+       MAIN HEADLINE
+    ========================= */
+
+    .hero h1 {
+        font-size: clamp(38px, 10vw, 52px);
+
+        line-height: 1.05;
+
+        letter-spacing: -1.5px;
+
+        max-width: 11ch;
+
+        margin: 0 auto 25px;
+    }
+
+
+    /* =========================
+       HERO TITLE
+    ========================= */
+
+    .hero-title {
+        font-size: 15px;
+
+        line-height: 1.55;
+
+        margin-bottom: 5px;
+    }
+
+
+    /* =========================
+       HERO TAGLINE
+    ========================= */
+
+    .hero-tagline {
+        font-size: 15px;
+
+        line-height: 1.55;
+
+        max-width: 32ch;
+
+        margin: 0 auto 20px;
+    }
+
+
+    /* =========================
+       TECHNOLOGY STACK
+    ========================= */
+
+    .tech-stack {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        margin: 20px 0 25px;
+    }
+
+    .tech-stack span {
+        padding: 8px 15px;
+
+        border-radius: 999px;
+
+        font-size: 12px;
+
+        white-space: nowrap;
+    }
+
+
+    /* =========================
+       HERO DESCRIPTION
+    ========================= */
+
+    .hero-sub {
+        max-width: 36ch;
+
+        margin: 0 auto;
+
+        font-size: 15px;
+
+        line-height: 1.65;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       HERO BUTTONS
+    ========================= */
+
+    .hero-actions {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+
+        margin-top: 25px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 13px 18px;
+    }
+
+
+    /* =========================
+       LEDGER SECTION
+    ========================= */
+
+    .ledger-pair {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+
+    /* =========================
+       LEDGER CARDS
+    ========================= */
+
+    .ledger-card {
+        width: 100%;
+
+        padding: 24px 20px;
+
+        border-radius: 16px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       FIELD CARD
+    ========================= */
+
+    .ledger-card.field dl {
+        width: 100%;
+    }
+
+    .ledger-card.field dl > div {
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding: 11px 0;
+    }
+
+    .ledger-card.field dt {
+        flex-shrink: 0;
+    }
+
+    .ledger-card.field dd {
+        text-align: right;
+
+        margin: 0;
+    }
+
+
+    /* =========================
+       BUILD STATUS
+    ========================= */
+
+    .ledger-card.lab pre {
+        width: 100%;
+
+        overflow-x: auto;
+
+        font-size: 10px;
+
+        line-height: 1.7;
+
+        white-space: pre;
+    }
+
+}
+
+/* =========================================================
+   HERO MOBILE — FINAL MICRO POLISH
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding-top: 48px;
+        padding-bottom: 40px;
+        gap: 36px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 9.5vw, 48px);
+        line-height: 1.08;
+        letter-spacing: -1.2px;
+        margin-bottom: 22px;
+    }
+
+    .eyebrow {
+        font-size: 9.5px;
+        letter-spacing: 1.1px;
+        margin-bottom: 18px;
+    }
+
+    .hero-title {
+        font-size: 14.5px;
+    }
+
+    .hero-tagline {
+        font-size: 14.5px;
+        margin-bottom: 18px;
+    }
+
+    .tech-stack {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 7px;
+    }
+
+    .tech-stack span {
+        padding: 8px 14px;
+        font-size: 11.5px;
+    }
+
+    .hero-sub {
+        font-size: 14.5px;
+        line-height: 1.65;
+        max-width: 35ch;
+    }
+
+}
+
+/* =========================================================
+   ABOUT — MOBILE RESPONSIVE POLISH
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 35px 22px 50px;
+        text-align: center;
+    }
+
+    .about-badge {
+        margin-bottom: 18px;
+    }
+
+    .about-badge img {
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .about-copy {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-copy h2 {
+        font-size: 36px;
+        line-height: 1.15;
+        margin-bottom: 22px;
+    }
+
+    .about-copy p {
+        font-size: 15.5px;
+        line-height: 1.65;
+        margin-bottom: 22px;
+        color: #b8c9df;
+    }
+
+    .about-copy p:last-child {
+        margin-bottom: 0;
+    }
 
 }

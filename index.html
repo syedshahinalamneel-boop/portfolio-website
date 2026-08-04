@@ -34,6 +34,9 @@
     <a href="#certifications">Certificates</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </nav>
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+    🌙
+</button>
 </header>
 
 <main>
@@ -653,24 +656,27 @@ cloud deployment       ● planned
 </section>
 
 
-  <!-- ===================== CONTACT ===================== -->
-  <section id="contact" class="contact">
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="contact">
+
     <h2>Let's build something</h2>
+
     <p>
-      Open to freelance work, collaborations, and conversations about sales
-      systems that actually make sense to the people using them.
+        Open to freelance work, collaborations, and conversations about sales
+        systems that actually make sense to the people using them.
     </p>
-    <a class="btn btn-primary" href="mailto:hello@example.com">Say hello</a>
-  </section>
+
+    <a class="btn btn-primary"
+       href="mailto:syedshahinalamneel@gmail.com">
+        Say hello
+    </a>
+
+</section>
 
 </main>
 
-<footer>
-  <p>© <span id="year"></span> Sayed Shaheen Alam — Sales by day, code by night.</p>
-</footer>
-
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
   toggle.addEventListener('click', () => {
@@ -750,13 +756,15 @@ cloud deployment       ● planned
 
     <div class="footer-bottom">
 
-        <p>
-            © 2026 Sayed Shaheen Alam • Built with HTML, CSS & JavaScript
-        </p>
+    <p>
+        © <span id="year"></span>
+        Sayed Shaheen Alam • Built with HTML, CSS & JavaScript
+    </p>
 
-    </div>
+</div>
 
 </footer>
+<script src="script.js"></script>
 
 </body>
 </html>
