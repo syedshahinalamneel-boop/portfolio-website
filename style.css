@@ -643,46 +643,330 @@ nav a.nav-cta:hover {
 }
 
 /* =========================================================
+   STACK — MOBILE & DARK MODE POLISH
+========================================================= */
+
+.stack {
+    padding: 100px 0;
+}
+
+.stack h2 {
+    font-family: var(--font-display);
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 50px;
+    color: var(--text-dark);
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.stack-col {
+    min-width: 0;
+}
+
+.stack-heading {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    color: var(--mint);
+}
+
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chip-list li {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 15px;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+    border: 1px solid var(--line);
+
+    font-size: 14px;
+    line-height: 1.2;
+
+    color: var(--text-dark);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.chip-list li:hover {
+    transform: translateY(-2px);
+    border-color: var(--mint);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .stack h2 {
+    color: #f5f7fa;
+}
+
+body.dark-mode .stack-heading {
+    color: var(--mint);
+}
+
+body.dark-mode .chip-list li {
+    background: #111c2d;
+    border-color: #26364d;
+    color: #dce6f2;
+}
+
+body.dark-mode .chip-list li:hover {
+    border-color: var(--mint);
+    background: #16263b;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .stack {
+        padding: 70px 0;
+    }
+
+    .stack h2 {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .stack-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .stack-heading {
+        margin-bottom: 15px;
+    }
+
+    .chip-list {
+        gap: 9px;
+    }
+
+    .chip-list li {
+        font-size: 13px;
+        padding: 9px 14px;
+    }
+
+}
+
+/* =========================================================
    BUILD LOG
 ========================================================= */
-.log h2 { font-size: 32px; }
-.log-sub { color: var(--text-light); margin: 10px 0 40px; }
 
-.log-list { list-style: none; }
+.log {
+    padding: 100px 0;
+}
+
+.log h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.log-sub {
+    color: var(--text-light);
+    margin: 10px 0 40px;
+    max-width: 720px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.log-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 .log-list li {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 24px;
-  padding: 26px 0;
-  border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+
+    padding: 28px 0;
+
+    border-top: 1px solid var(--line);
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.25s ease;
 }
-.log-list li:last-child { border-bottom: 1px solid var(--line); }
+
+.log-list li:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+
+/* =========================
+   NUMBER
+========================= */
 
 .log-tag {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--mint-deep);
-  font-weight: 600;
-  padding-top: 2px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--mint);
+
+    padding-top: 3px;
 }
+
+
+/* =========================
+   TITLE
+========================= */
 
 .log-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: 700;
+
+    color: var(--text-dark);
+
+    margin: 0 0 8px;
+
+    transition: color 0.3s ease;
 }
 
+
+/* =========================
+   DESCRIPTION
+========================= */
+
 .log-text {
-  color: var(--text-light);
-  font-size: 15.5px;
-  max-width: 68ch;
+    color: var(--text-light);
+
+    font-size: 15.5px;
+    line-height: 1.7;
+
+    max-width: 68ch;
+
+    margin: 0;
 }
+
+.log-text strong {
+    color: var(--text-dark);
+}
+
+
+/* =========================
+   CODE
+========================= */
+
 .log-text code {
-  background: var(--paper-deep);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 13px;
+    background: var(--paper-deep);
+
+    padding: 2px 6px;
+
+    border-radius: 4px;
+
+    font-family: var(--font-mono);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DARK MODE — BUILD LOG
+========================================================= */
+
+body.dark-mode .log h2 {
+    color: #f5f7fa;
+}
+
+body.dark-mode .log-sub {
+    color: #b8c4d6;
+}
+
+body.dark-mode .log-list li {
+    border-color: #26364d;
+}
+
+body.dark-mode .log-tag {
+    color: var(--mint);
+}
+
+body.dark-mode .log-title {
+    color: #f5f7fa;
+}
+
+body.dark-mode .log-text {
+    color: #b8c4d6;
+}
+
+body.dark-mode .log-text strong {
+    color: #f5f7fa;
+}
+
+body.dark-mode .log-text code {
+    background: #111c2d;
+    color: #dbe5f0;
+}
+
+
+/* =========================================================
+   MOBILE — BUILD LOG
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .log {
+        padding: 70px 0;
+    }
+
+    .log h2 {
+        font-size: 30px;
+    }
+
+    .log-sub {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .log-list li {
+        grid-template-columns: 38px 1fr;
+        gap: 14px;
+
+        padding: 24px 0;
+    }
+
+    .log-tag {
+        font-size: 12px;
+    }
+
+    .log-title {
+        font-size: 17px;
+    }
+
+    .log-text {
+        font-size: 15px;
+        line-height: 1.65;
+    }
 }
 
 /* =========================================================
@@ -788,70 +1072,194 @@ nav a.nav-cta:hover {
 }
 
 /* =========================================================
-   EXPERIENCE
+   PROFESSIONAL EXPERIENCE
 ========================================================= */
 
-.experience{
-
-    padding:100px 0;
-
+.experience {
+    padding: 100px 0;
 }
 
-.experience-sub{
-
-    color:var(--text-light);
-
-    margin-bottom:45px;
-
+.experience h2 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: var(--text-dark);
 }
 
-.experience-card{
-
-    background:#fff;
-
-    border:1px solid var(--line);
-
-    border-radius:18px;
-
-    padding:35px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.05);
-
+.experience-sub {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 45px;
+    max-width: 650px;
 }
 
-.experience-year{
 
-    display:inline-block;
+/* =========================
+   EXPERIENCE CARD
+========================= */
 
-    padding:8px 18px;
-
-    border-radius:30px;
-
-    background:#eef5ff;
-
-    color:#0b57d0;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:15px;
-
+.experience-card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 34px;
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.experience-card h3{
-
-    font-size:28px;
-
-    margin-bottom:8px;
-
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
-.experience-card h4{
 
-    color:var(--text-light);
+/* =========================
+   STATUS
+========================= */
 
-    margin-bottom:20px;
+.experience-status {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 999px;
+
+    background: #e8f4ff;
+    color: #0878d1;
+
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   JOB TITLE
+========================= */
+
+.experience-card h3 {
+    font-family: var(--font-display);
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+    color: var(--ink);
+}
+
+
+/* =========================
+   COMPANY
+========================= */
+
+.experience-company {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.experience-description {
+    max-width: 900px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .experience h2 {
+    color: #f5f7fa;
+}
+
+body.dark-mode .experience-sub {
+    color: #b8c4d6;
+}
+
+body.dark-mode .experience-card {
+    background: #111c2d;
+    border-color: #26364d;
+}
+
+body.dark-mode .experience-card:hover {
+    border-color: #34506f;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .experience-status {
+    background: rgba(35, 181, 138, 0.12);
+    color: var(--mint);
+}
+
+body.dark-mode .experience-card h3 {
+    color: #f5f7fa;
+}
+
+body.dark-mode .experience-company {
+    color: #c4d0df;
+}
+
+body.dark-mode .experience-description {
+    color: #b8c4d6;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .experience {
+        padding: 70px 0;
+    }
+
+    .experience h2 {
+        font-size: 30px;
+    }
+
+    .experience-sub {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .experience-card {
+        padding: 28px 24px;
+        border-radius: 16px;
+    }
+
+    .experience-card h3 {
+        font-size: 26px;
+    }
+
+    .experience-company {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .experience-description {
+        font-size: 15px;
+        line-height: 1.65;
+    }
 
 }
 
@@ -911,11 +1319,6 @@ nav a.nav-cta:hover {
 
 }
 
-.stats{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
 
 /* =========================================================
    CERTIFICATIONS
@@ -1171,18 +1574,21 @@ footer {
 
 }
 
-.skill-card{
+.skill-card {
 
-    background:#fff;
+    background: var(--paper);
 
-    border:1px solid var(--line);
+    border: 1px solid var(--line);
 
-    border-radius:16px;
+    border-radius: 16px;
 
-    padding:30px;
+    padding: 30px;
 
-    transition:.3s;
-
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .skill-card:hover{
@@ -1719,10 +2125,9 @@ body.dark-mode .skill-card ul li {
 
 /* Divider */
 
-body.dark-mode .skill-card ul li + li {
-    border-top-color: #34445a;
+body.dark-mode .skill-card li {
+    border-bottom-color: #34445a;
 }
-
 /* =========================================================
    DARK MODE — FEATURED PROJECT
 ========================================================= */
@@ -2634,6 +3039,116 @@ body.dark-mode .footer-bottom p {
 
     .about-copy p:last-child {
         margin-bottom: 0;
+    }
+
+}
+
+/* =========================================================
+   FOOTER — MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .footer {
+        padding: 60px 20px 25px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+
+    /* =========================
+       FOOTER BRAND
+    ========================= */
+
+    .footer-brand {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand h2 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .footer-title {
+        font-size: 12px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .footer-description {
+        max-width: 330px;
+        margin: 0 auto;
+
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .footer-menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-menu h3,
+    .footer-contact h3 {
+        margin-bottom: 18px;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .footer-menu a,
+    .footer-contact a {
+        display: block;
+
+        padding: 9px 0;
+
+        font-size: 14px;
+
+        text-decoration: none;
+    }
+
+
+    /* =========================
+       CONNECT
+    ========================= */
+
+    .footer-contact {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* =========================
+       FOOTER BOTTOM
+    ========================= */
+
+    .footer-bottom {
+        margin-top: 45px;
+        padding-top: 20px;
+
+        text-align: center;
+
+        border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-bottom p {
+        font-size: 11px;
+        line-height: 1.6;
+        margin: 0;
     }
 
 }
